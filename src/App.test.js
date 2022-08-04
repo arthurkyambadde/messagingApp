@@ -1,8 +1,17 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("Tests for the App component", () => {
+  test("App components succesfully renders", () => {
+    render(<App />);
+
+    const container = screen.getByTestId("app_container");
+    expect(container).toBeInTheDocument();
+  });
+
+  test("Test that the chatUser_List component will succesfuly be rendered into the app container", () => {
+    render(<App />);
+    const chatUserList = screen.getByTestId("chatUser_List");
+    expect(chatUserList).toBeInTheDocument();
+  });
 });

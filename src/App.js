@@ -19,8 +19,8 @@ const AppContainer = styled.div`
 class App extends React.Component {
   render() {
     return (
-      <AppContainer class="App">
-        <ChatUserList />
+      <AppContainer data-testid="app_container">
+        <ChatUserList testId="chatUser_List" />
       </AppContainer>
     );
   }

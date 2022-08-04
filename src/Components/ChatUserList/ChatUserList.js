@@ -2,7 +2,7 @@ import React from "react";
 
 class ChatUserList extends React.Component {
   render() {
-    return <div>Its rendering</div>;
+    return <div data-testid={this.props.testId}>Its rendering</div>;
   }
 }
 
