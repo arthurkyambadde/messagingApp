@@ -9,11 +9,16 @@ const ChatUserListContainer = styled.div`
   padding: 16px;
 `;
 
+const MessagesTag = styled.h2`
+  margin: 0;
+  font-size: 32px;
+`;
+
 class ChatUserList extends React.Component {
   render() {
     return (
       <ChatUserListContainer data-testid={this.props.testId}>
-        <h2>Messages</h2>
+        <MessagesTag>Messages</MessagesTag>
       </ChatUserListContainer>
     );
   }
