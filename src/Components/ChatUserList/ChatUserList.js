@@ -13,7 +13,7 @@ class ChatUserList extends React.Component {
   render() {
     return (
       <ChatUserListContainer data-testid={this.props.testId}>
-        Its rendering
+        <h2>Messages</h2>
       </ChatUserListContainer>
     );
   }
