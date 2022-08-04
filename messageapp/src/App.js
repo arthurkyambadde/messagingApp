@@ -8,6 +8,12 @@ const AppContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(2, 0, 36, 1) 100%
+  );
+  color: #fff;
 `;
 
 class App extends React.Component {
