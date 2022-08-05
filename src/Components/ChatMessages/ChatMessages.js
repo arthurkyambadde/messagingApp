@@ -38,6 +38,10 @@ const TextInputArea = styled.input`
   width: 80%;
 `;
 
+const MessagesContainer = styled.div`
+  padding: 15px;
+`;
+
 class ChatMessages extends React.Component {
   render() {
     return (
@@ -47,7 +51,7 @@ class ChatMessages extends React.Component {
           <div>Respondents Name</div>
           <SettingsIcon />
         </ChatMessageHeader>
-        <div>Space for chats</div>
+        <MessagesContainer>Space for chats</MessagesContainer>
 
         <NewMessageInfo>
           <TextInputArea type="text" placeholder="Type A Message" />
