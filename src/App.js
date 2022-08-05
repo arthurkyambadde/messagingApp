@@ -1,11 +1,13 @@
 import React from "react";
-import ChatUserList from "./Components/ChatUserList/ChatUserList";
+import ChatUserList from "./Components/Chats/ChatUserList";
 import styled from "styled-components";
+import ChatMessages from "./Components/ChatMessages/ChatMessages";
 
 const AppContainer = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
+  gap: 20px;
   align-items: center;
   justify-content: center;
   background: linear-gradient(
@@ -21,6 +23,7 @@ class App extends React.Component {
     return (
       <AppContainer data-testid="app_container">
         <ChatUserList testId="chatUser_List" />
+        <ChatMessages />
       </AppContainer>
     );
   }
