@@ -2,6 +2,7 @@ import React from "react";
 import ChatUserList from "./Components/Chats/ChatUserList";
 import styled from "styled-components";
 import ChatMessages from "./Components/ChatMessages/ChatMessages";
+import { ThemeContext } from "./Context/Theme";
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -19,12 +20,19 @@ const AppContainer = styled.div`
 `;
 
 class App extends React.Component {
+  constructor(props) {
+    super();
+    this.state = {};
+  }
+
   render() {
     return (
-      <AppContainer data-testid="app_container">
-        <ChatUserList testId="chatUser_List" />
-        <ChatMessages />
-      </AppContainer>
+      <ThemeContext.Provider>
+        <AppContainer data-testid="app_container">
+          <ChatUserList testId="chatUser_List" />
+          <ChatMessages />
+        </AppContainer>
+      </ThemeContext.Provider>
     );
   }
 }
