@@ -1,9 +1,17 @@
 import React from "react";
+import styled from "styled-components";
+
+const ReturnArrowContainer = styled.div`
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+`;
 
 class ReturnArrow extends React.Component {
   render() {
     return (
-      <div>
+      <ReturnArrowContainer>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -16,7 +24,7 @@ class ReturnArrow extends React.Component {
             clipRule="evenodd"
           />
         </svg>
-      </div>
+      </ReturnArrowContainer>
     );
   }
 }

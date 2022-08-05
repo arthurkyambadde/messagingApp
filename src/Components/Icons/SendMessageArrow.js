@@ -1,9 +1,17 @@
 import React from "react";
+import styled from "styled-components";
+
+const SendMessageArrowContainer = styled.div`
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+`;
 
 class SendMessageArrow extends React.Component {
   render() {
     return (
-      <div>
+      <SendMessageArrowContainer>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -18,7 +26,7 @@ class SendMessageArrow extends React.Component {
             d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-      </div>
+      </SendMessageArrowContainer>
     );
   }
 }

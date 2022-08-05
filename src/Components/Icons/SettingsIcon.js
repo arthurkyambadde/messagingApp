@@ -1,9 +1,17 @@
 import React from "react";
+import styled from "styled-components";
+
+const SettingsIconContainer = styled.div`
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+`;
 
 class SettingsIcon extends React.Component {
   render() {
     return (
-      <div>
+      <SettingsIconContainer>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6"
@@ -24,7 +32,7 @@ class SettingsIcon extends React.Component {
             d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
           />
         </svg>
-      </div>
+      </SettingsIconContainer>
     );
   }
 }
