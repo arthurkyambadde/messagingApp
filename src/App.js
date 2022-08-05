@@ -16,22 +16,22 @@ const AppContainer = styled.div`
     rgba(0, 0, 0, 1) 0%,
     rgba(2, 0, 36, 1) 100%
   );
-  color: #fff;
 `;
 
 class App extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      theme: themes.light,
+      theme: themes.dark,
     };
   }
 
   toggleTheme = () => {
-    const { theme } = this.state;
     this.setState({
-      theme: (theme = themes.light ? themes.dark : themes.light),
+      theme: this.state.theme === themes.light ? themes.dark : themes.light,
     });
+
+    console.log("clicked............");
   };
 
   render() {
@@ -41,7 +41,7 @@ class App extends React.Component {
       <ThemeContext.Provider value={theme}>
         <AppContainer data-testid="app_container">
           <ChatUserList testId="chatUser_List" />
-          <ChatMessages />
+          <ChatMessages toggleTheme={this.toggleTheme} />
         </AppContainer>
       </ThemeContext.Provider>
     );
