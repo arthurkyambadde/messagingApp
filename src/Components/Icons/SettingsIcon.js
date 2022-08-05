@@ -6,6 +6,7 @@ const SettingsIconContainer = styled.div`
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
 `;
 
 class SettingsIcon extends React.Component {
@@ -13,8 +14,8 @@ class SettingsIcon extends React.Component {
     return (
       <SettingsIconContainer>
         <svg
+          onClick={this.props.onClick}
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

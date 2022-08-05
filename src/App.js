@@ -2,7 +2,7 @@ import React from "react";
 import ChatUserList from "./Components/Chats/ChatUserList";
 import styled from "styled-components";
 import ChatMessages from "./Components/ChatMessages/ChatMessages";
-import { ThemeContext } from "./Context/Theme";
+import { ThemeContext, themes } from "./Context/Theme";
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -22,12 +22,23 @@ const AppContainer = styled.div`
 class App extends React.Component {
   constructor(props) {
     super();
-    this.state = {};
+    this.state = {
+      theme: themes.light,
+    };
   }
 
+  toggleTheme = () => {
+    const { theme } = this.state;
+    this.setState({
+      theme: (theme = themes.light ? themes.dark : themes.light),
+    });
+  };
+
   render() {
+    const { theme } = this.state;
+
     return (
-      <ThemeContext.Provider>
+      <ThemeContext.Provider value={theme}>
         <AppContainer data-testid="app_container">
           <ChatUserList testId="chatUser_List" />
           <ChatMessages />

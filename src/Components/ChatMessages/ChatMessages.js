@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ReturnArrow from "../Icons/ReturnArrow";
 import SendMessageArrow from "../Icons/SendMessageArrow";
 import SettingsIcon from "../Icons/SettingsIcon";
+import { ThemeContext } from "../../Context/Theme";
 
 const ChatContainer = styled.div`
   height: 450px;
@@ -10,6 +11,8 @@ const ChatContainer = styled.div`
   border: 1px solid #fff;
   border-radius: 8px;
   position: relative;
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.color};
 `;
 
 const ChatMessageHeader = styled.div`
@@ -43,13 +46,17 @@ const MessagesContainer = styled.div`
 `;
 
 class ChatMessages extends React.Component {
+  static contextType = ThemeContext;
+
   render() {
+    const { toggleTheme } = this.props;
+
     return (
-      <ChatContainer>
+      <ChatContainer theme={this.context}>
         <ChatMessageHeader>
           <ReturnArrow />
           <div>Respondents Name</div>
-          <SettingsIcon />
+          <SettingsIcon onClick={toggleTheme} />
         </ChatMessageHeader>
         <MessagesContainer>Space for chats</MessagesContainer>
 
