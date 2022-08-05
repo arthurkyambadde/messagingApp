@@ -10,7 +10,7 @@ const ChatUserListContainer = styled.div`
   width: 250px;
   border: 1px solid #fff;
   border-radius: 8px;
-  /* padding: 16px; */
+  padding: 0px;
 `;
 
 const MessagesTag = styled.h2`
