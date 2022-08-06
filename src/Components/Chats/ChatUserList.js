@@ -1,11 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ThemeContext } from "../../Context/Theme";
-import daniealImg from "../../Assets/daniel.jpg";
-import denisImg from "../../Assets/denis.jpg";
-import jimmyImg from "../../Assets/jimmy.jpg";
-import jordanImg from "../../Assets/jordan.jpg";
-
+import { daniel, jimmy, denis, jordan } from "../../utilities/ChatFriends";
 const ChatUserListContainer = styled.div`
   height: 450px;
   width: 250px;
@@ -69,36 +65,7 @@ const UserMessages = styled.p`
   margin: 0;
 `;
 
-const usersList = [
-  {
-    id: 1,
-    userImage: daniealImg,
-    name: "daniel",
-    message:
-      "The band actually formed in 1997, and they already had two albums and a small but loyal fanbase under their belt. That tiny fanbase got a boost almost instantly when their final",
-  },
-  {
-    id: 2,
-    userImage: jordanImg,
-    name: "Jordan",
-    message:
-      "The band actually formed in 1997, and they already had two albums and a small but loyal fanbase under their belt. That tiny fanbase got a boost almost instantly when their final",
-  },
-  {
-    id: 3,
-    userImage: jimmyImg,
-    name: "Jimmy",
-    message:
-      "The band actually formed in 1997, and they already had two albums and a small but loyal fanbase under their belt. That tiny fanbase got a boost almost instantly when their final",
-  },
-  {
-    id: 4,
-    userImage: denisImg,
-    name: "Denis",
-    message:
-      "The band actually formed in 1997, and they already had two albums and a small but loyal fanbase under their belt. That tiny fanbase got a boost almost instantly when their final",
-  },
-];
+const usersList = [daniel, jordan, denis, jimmy];
 
 const ListItem = usersList.map((user) => {
   return (
@@ -107,7 +74,7 @@ const ListItem = usersList.map((user) => {
       <UserDetails>
         <UserName>{user.name}</UserName>
         <UserMessages>
-          {user.message.slice(0, 30).concat("........")}
+          {user.message.to[0].slice(0, 30).concat("........")}
         </UserMessages>
       </UserDetails>
     </UserListItem>
